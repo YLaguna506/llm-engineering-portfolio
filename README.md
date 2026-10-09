@@ -2,8 +2,9 @@
 
 My work from [Ed Donner's LLM Engineering course](https://github.com/ed-donner/llm_engineering), organized by week.
 
-The course uses GPT; I use Gemini instead, called through the `openai` Python package via Gemini's
-OpenAI-compatible endpoint (`https://generativelanguage.googleapis.com/v1beta/openai/`).
+The course uses GPT and Claude. I call Gemini, OpenRouter, and a local Ollama server instead,
+all through the `openai` Python package. Gemini's OpenAI-compatible endpoint is
+`https://generativelanguage.googleapis.com/v1beta/openai/`.
 
 ## Week 1
 
@@ -15,12 +16,19 @@ OpenAI-compatible endpoint (`https://generativelanguage.googleapis.com/v1beta/op
 | [day5-company-brochure](week1/day5-company-brochure.ipynb) | Multi-step brochure generator: Gemini picks relevant links (JSON), writes a brochure, translates it to Spanish, and streams |
 | [week1-exercise-technical-tutor](week1/week1-exercise-technical-tutor.ipynb) | Technical Q&A tool answered by Gemini (streamed) and Llama 3.2 |
 
-`week1/scraper.py` is the small BeautifulSoup helper the notebooks import.
+`week1/scraper.py` is the small BeautifulSoup helper the week 1 notebooks import.
+
+## Week 2
+
+| Notebook | What it does |
+| --- | --- |
+| [day1-three-providers](week2/day1-three-providers.ipynb) | Same prompts on Gemini, Ollama (Llama 3.2 and Qwen 2.5), and OpenRouter; Gemini reasoning effort, token cost, prompt caching on Hamlet, an argumentative chat, and a three-kid conversation |
 
 ## Tech stack
 
 - Python 3.12, managed with [uv](https://docs.astral.sh/uv/)
-- `openai` client library pointed at Gemini and at a local Ollama server
+- `openai` client library pointed at Gemini, OpenRouter, and a local Ollama server
+- `litellm` for Gemini token cost and prompt caching
 - `requests` + `beautifulsoup4` for scraping, `tiktoken` for tokenization
 - Jupyter notebooks
 
@@ -32,8 +40,8 @@ OpenAI-compatible endpoint (`https://generativelanguage.googleapis.com/v1beta/op
    uv sync
    ```
 
-2. Copy `.env.example` to `.env` and add your `GEMINI_API_KEY` from [Google AI Studio](https://aistudio.google.com/api-keys).
-3. For the local-model cells, install [Ollama](https://ollama.com) and run `ollama pull llama3.2`.
+2. Copy `.env.example` to `.env` and add your `GEMINI_API_KEY` from [Google AI Studio](https://aistudio.google.com/api-keys) and your `OPENROUTER_API_KEY` from [OpenRouter](https://openrouter.ai/keys).
+3. For the local-model cells, install [Ollama](https://ollama.com) and run `ollama pull llama3.2` and `ollama pull qwen2.5:3b`.
 4. Open a notebook and select the `.venv` kernel in the repo root.
 
 ## Repo structure
@@ -43,6 +51,9 @@ OpenAI-compatible endpoint (`https://generativelanguage.googleapis.com/v1beta/op
 ├── week1/
 │   ├── scraper.py
 │   └── *.ipynb
+├── week2/
+│   ├── day1-three-providers.ipynb
+│   └── hamlet.txt
 ├── pyproject.toml
 ├── uv.lock
 └── .env.example
