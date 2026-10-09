@@ -17,8 +17,35 @@ OpenAI-compatible endpoint (`https://generativelanguage.googleapis.com/v1beta/op
 
 `week1/scraper.py` is the small BeautifulSoup helper the notebooks import.
 
+## Tech stack
+
+- Python 3.12, managed with [uv](https://docs.astral.sh/uv/)
+- `openai` client library pointed at Gemini and at a local Ollama server
+- `requests` + `beautifulsoup4` for scraping, `tiktoken` for tokenization
+- Jupyter notebooks
+
 ## Setup
 
-1. Python 3.12 with `openai`, `python-dotenv`, `requests`, `beautifulsoup4`, `tiktoken`, `ipython`.
-2. Copy `.env.example` to `.env` and add `GEMINI_API_KEY` (from [Google AI Studio](https://aistudio.google.com/api-keys)).
+1. Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then from the repo root run:
+
+   ```bash
+   uv sync
+   ```
+
+2. Copy `.env.example` to `.env` and add your `GEMINI_API_KEY` from [Google AI Studio](https://aistudio.google.com/api-keys).
 3. For the local-model cells, install [Ollama](https://ollama.com) and run `ollama pull llama3.2`.
+4. Open a notebook and select the `.venv` kernel in the repo root.
+
+## Repo structure
+
+```text
+.
+├── week1/
+│   ├── scraper.py
+│   └── *.ipynb
+├── pyproject.toml
+├── uv.lock
+└── .env.example
+```
+
+Each later week of the course will get its own `weekN/` folder.
