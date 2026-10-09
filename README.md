@@ -1,26 +1,21 @@
 # LLM Engineering Portfolio
 
-My own work from [Ed Donner's LLM Engineering course](https://github.com/ed-donner/llm_engineering).
-
-This repo is **not** a copy of the course. Labs stay in a local clone of the course. Finished notebooks that I want to share go here, organized by week.
+My work from [Ed Donner's LLM Engineering course](https://github.com/ed-donner/llm_engineering), organized by week.
 
 ## Week 1
 
 | Notebook | What it does |
 | --- | --- |
-| [day1-website-summarizer.ipynb](week1/day1-website-summarizer.ipynb) | Fetch a web page and summarize it with an LLM |
-| [day2-open-source-models.ipynb](week1/day2-open-source-models.ipynb) | Same idea with local / open-source models (Ollama) |
-| [day4-tokenizing.ipynb](week1/day4-tokenizing.ipynb) | Tokenize text with tiktoken |
-| [day5-company-brochure.ipynb](week1/day5-company-brochure.ipynb) | Generate a company brochure from a website |
-| [exercise-technical-tutor.ipynb](week1/exercise-technical-tutor.ipynb) | End-of-week exercise: technical Q&A with Gemini (streaming) and Llama 3.2 via Ollama |
+| [day1-website-summarizer](week1/day1-website-summarizer.ipynb) | Scrape a web page and get a snarky GPT summary, plus a humorous-psychologist prompt |
+| [day2-chat-completions-and-ollama](week1/day2-chat-completions-and-ollama.ipynb) | The Chat Completions API over raw HTTP and the `openai` client, OpenAI-compatible endpoints, and the summarizer on a local Ollama model |
+| [day4-tokens-and-memory](week1/day4-tokens-and-memory.ipynb) | Tokenizing with `tiktoken`, and why LLM calls are stateless |
+| [day5-company-brochure](week1/day5-company-brochure.ipynb) | Multi-step brochure generator: GPT picks relevant links (JSON), writes a brochure, translates it to Spanish, and streams |
+| [week1-exercise-technical-tutor](week1/week1-exercise-technical-tutor.ipynb) | Technical Q&A tool answered by GPT (streamed) and Llama 3.2 |
+
+`week1/scraper.py` is the small BeautifulSoup helper the notebooks import.
 
 ## Setup
 
-1. Use the course environment from the original repo (Python, `uv`, Jupyter).
-2. Copy `.env.example` to `.env` and add your API keys.
-3. For the Ollama cells, run Ollama locally (`ollama run llama3.2`).
-
-## Notes
-
-- API keys are loaded from `.env`. They are not stored in this repo.
-- Course materials, solutions, and community contributions stay in the local course clone.
+1. Python 3.12 with `openai`, `python-dotenv`, `requests`, `beautifulsoup4`, `tiktoken`, `ipython`.
+2. Copy `.env.example` to `.env` and add `OPENAI_API_KEY`.
+3. For the local-model cells, install [Ollama](https://ollama.com) and run `ollama pull llama3.2`.
