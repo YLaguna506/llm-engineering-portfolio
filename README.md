@@ -23,7 +23,7 @@ all through the `openai` Python package. Gemini's OpenAI-compatible endpoint is
 | Notebook | What it does |
 | --- | --- |
 | [day1-three-providers](week2/day1-three-providers.ipynb) | Same prompts on Gemini, Ollama (Llama 3.2 and Qwen 2.5), and OpenRouter; Gemini reasoning effort, token cost, prompt caching on Hamlet, an argumentative chat, and a three-kid conversation |
-| [day2-gradio](week2/day2-gradio.ipynb) | Gradio UIs: a text transform, a Gemini chat, a streaming Gemini or Llama selector, and a company brochure generator |
+| [day2-gradio](week2/day2-gradio.ipynb) | Gradio UIs: a text transform, a Gemini chat, a streaming Gemini or Llama selector, and a brochure generator that picks relevant links before writing |
 
 ## Tech stack
 
