@@ -23,6 +23,7 @@ all through the `openai` Python package. Gemini's OpenAI-compatible endpoint is
 | Notebook | What it does |
 | --- | --- |
 | [day1-three-providers](week2/day1-three-providers.ipynb) | Same prompts on Gemini, Ollama (Llama 3.2 and Qwen 2.5), and OpenRouter; Gemini reasoning effort, token cost, prompt caching on Hamlet, an argumentative chat, and a three-kid conversation |
+| [day2-gradio](week2/day2-gradio.ipynb) | Gradio UIs: a text transform, a Gemini chat, a streaming Gemini or Llama selector, and a company brochure generator |
 
 ## Tech stack
 
@@ -30,6 +31,7 @@ all through the `openai` Python package. Gemini's OpenAI-compatible endpoint is
 - `openai` client library pointed at Gemini, OpenRouter, and a local Ollama server
 - `litellm` for Gemini token cost and prompt caching
 - `requests` + `beautifulsoup4` for scraping, `tiktoken` for tokenization
+- `gradio` for the week 2 chat and brochure interfaces
 - Jupyter notebooks
 
 ## Setup
@@ -53,7 +55,9 @@ all through the `openai` Python package. Gemini's OpenAI-compatible endpoint is
 │   └── *.ipynb
 ├── week2/
 │   ├── day1-three-providers.ipynb
-│   └── hamlet.txt
+│   ├── day2-gradio.ipynb
+│   ├── hamlet.txt
+│   └── scraper.py
 ├── pyproject.toml
 ├── uv.lock
 └── .env.example
