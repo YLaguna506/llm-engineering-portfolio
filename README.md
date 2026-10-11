@@ -24,6 +24,7 @@ all through the `openai` Python package. Gemini's OpenAI-compatible endpoint is
 | --- | --- |
 | [day1-three-providers](week2/day1-three-providers.ipynb) | Same prompts on Gemini, Ollama (Llama 3.2 and Qwen 2.5), and OpenRouter; Gemini reasoning effort, token cost, prompt caching on Hamlet, an argumentative chat, and a three-kid conversation |
 | [day2-gradio](week2/day2-gradio.ipynb) | Gradio UIs: a text transform, a Gemini chat, a streaming Gemini or Llama selector, and a brochure generator that picks relevant links before writing |
+| [day3-clothes-store-chat](week2/day3-clothes-store-chat.ipynb) | A streaming Gradio chatbot for a clothes store: sale-aware system prompt, plus extra rules for shoes and belts |
 
 ## Tech stack
 
@@ -56,6 +57,7 @@ all through the `openai` Python package. Gemini's OpenAI-compatible endpoint is
 ├── week2/
 │   ├── day1-three-providers.ipynb
 │   ├── day2-gradio.ipynb
+│   ├── day3-clothes-store-chat.ipynb
 │   ├── hamlet.txt
 │   └── scraper.py
 ├── pyproject.toml
